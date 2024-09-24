@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      overflow-y: scroll;
+    }
+    body {
+      -webkit-font-smoothing: antialiased; /* Makes fonts appear less bold */
+      -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  }
+
+@font-face {
+    font-family: "BagossStandardTRIAL-Regular";
+    src: url(/fonts/BagossStandardTRIAL-Regular.ttf);
+}
+

@@ -17,8 +17,8 @@ const UseCases = () => {
       <div className="flex justify-center md:justify-between mt-16 md:mt-40 mx-7.4">
         <PrimaryBtn title="Schedule a demo" />
         <div className="hidden md:flex gap-4">
-          <SecondaryBtn title="to" bColor="black" tColor="black"/>
-          <SecondaryBtn title="to" bColor="black" tColor="black"/>
+          <SecondaryBtn title="to" bColor="green" tColor="green"/>
+          <SecondaryBtn title="to" bColor="green" tColor="green"/>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import StepCard from "../Cards/StepCard"
 
 const Steps = () => {
   return (
-    <section id="how-it-works" className="mx-8 md:mx-7.4 mb-16 md:mb-40 mt-32 md:mt-52">
+    <section id="how-it-works" className="mx-8 md:mx-7.4 mb-16 md:mb-40 mt-32 md:mt-64">
       <H2 content="How it works."/>
       <div>
         <StepCard numberContent="01" h4Content="Connect Everything" p2Content="Instantly link your banks, ERPs, and payment tools to unify financial data across all your systems in one secure platform." />

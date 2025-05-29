@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { PrimaryBtn } from "../Elements/Buttons"
 import mantisLogo from "../../assets/mantis.svg"
 import { P4 } from "../Elements/Texts"
+import EarlyAccessModal from "./EarlyAccessModal";
 
 const Nav = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -32,9 +36,15 @@ const Nav = () => {
         </div>
         
         <div className="hidden md:flex">
-          <PrimaryBtn title="Get early access" />
+          <PrimaryBtn title="Get early access" onClick={() => setIsModalOpen(true)}/>
         </div>
       </div>
+
+      <EarlyAccessModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+
     </nav>
   )
 }

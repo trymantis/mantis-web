@@ -12,12 +12,6 @@ import {
 import { PrimaryBtn, SecondaryBtn } from "../Elements/Buttons";
 import { H3, P2 } from "../Elements/Texts";
 import EarlyAccess from "../../assets/EarlyAccess.svg";
-import {
-  Toast,
-  ToastDescription,
-  ToastProvider,
-  ToastViewport,
-} from "../ui/toast";
 
 const EarlyAccessModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -29,7 +23,8 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
     role: "",
   });
 
-  const [showToast, setShowToast] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validateEmail = (email) => {
@@ -57,12 +52,12 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     if (!validateForm()) return;
 
+    setIsLoading(true);
     try {
       const formDataToSend = new FormData();
       Object.keys(formData).forEach(key => {
         formDataToSend.append(key, formData[key]);
       });
-      console.log(formDataToSend);
 
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbyTrTYiPjd_lg4zefJPhaOe3IygNWDNtiptTHbyAajvCZ8B98OXVjD8K20kQD9Hx3Oi/exec",
@@ -72,14 +67,16 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
         }
       );
       if (response.ok) {
-        setShowToast(true);
+        setShowSuccess(true);
         setTimeout(() => {
-          setShowToast(false);
+          setShowSuccess(false);
           onClose();
         }, 3000);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -133,6 +130,15 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
 
           {/* Right side - Form and Demo */}
           <div className="w-full md:w-[50%] px-4 py-4 md:px-8">
+            {/* Success Message */}
+            {showSuccess && (
+              <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-md">
+                <p className="text-green-700 text-sm">
+                  You're in! We'll keep you posted as we get closer to launch.
+                </p>
+              </div>
+            )}
+
             {/* Form Section */}
             <form onSubmit={handleSubmit} className="space-y-2 w-full">
               <div className="pb-4">
@@ -227,9 +233,9 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
               </div>
               <div className="flex justify-start md:justify-end">
                 <PrimaryBtn 
-                  title="Join waitlist" 
+                  title={isLoading ? "Submitting..." : "Join waitlist"}
                   type="submit"
-                  disabled={!isFormValid()}
+                  disabled={!isFormValid() || isLoading}
                 />
               </div>
             </form>
@@ -250,16 +256,6 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
           </div>
         </div>
       </DialogContent>
-
-      {/* Success Toast */}
-      <ToastProvider>
-        <Toast open={showToast} onOpenChange={setShowToast}>
-          <ToastDescription>
-            You're in! We'll keep you posted as we get closer to launch.
-          </ToastDescription>
-        </Toast>
-        <ToastViewport />
-      </ToastProvider>
     </Dialog>
   );
 };

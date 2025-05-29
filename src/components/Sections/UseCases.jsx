@@ -2,10 +2,12 @@ import { H2 } from "../Elements/Texts"
 import { PrimaryBtn, SecondaryBtn } from "../Elements/Buttons"
 import UseCaseCard from "../Cards/UseCaseCard"
 import arrowLeft from "../../assets/arrowLeft.png";
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import EarlyAccessModal from "./EarlyAccessModal";
 
 const UseCases = () => {
   const scrollContainerRef = useRef(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -39,7 +41,7 @@ const UseCases = () => {
         <UseCaseCard h6Content="Retail & FMCG Chains" p2Content="We sync POS and bank data to your ledger, catching discrepancies and speeding up store-to-head-office closes."/>
       </div>
       <div className="flex justify-center md:justify-between mt-16 md:mt-40 mx-7.4">
-        <PrimaryBtn title="Get early access" />
+        <PrimaryBtn title="Get early access" onClick={() => setIsModalOpen(true)}/>
         <div className="hidden md:flex gap-4">
           <SecondaryBtn 
             icon={arrowLeft} 
@@ -56,6 +58,12 @@ const UseCases = () => {
           />
         </div>
       </div>
+
+      <EarlyAccessModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+      
     </section>
   )
 }

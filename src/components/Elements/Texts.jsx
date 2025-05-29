@@ -16,7 +16,7 @@ const H2 = ({content}) => {
 
 const H3 = ({content, color, align}) => {
     return (
-      <h2 className={`font-bag text-${align} tracking-tight text-3xl md:text-5xl text-${color} w-[22rem] md:w-full lg:w-[48rem]`}>
+      <h2 className={`font-bag text-${align} tracking-tight text-3xl md:text-5xl text-${color} w-full md:w-full lg:w-[48rem]`}>
             {content}
       </h2>
     )

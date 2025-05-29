@@ -96,7 +96,7 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
   };
 
   const handleScheduleDemo = () => {
-    const calendlyUrl = "https://calendly.com/your-calendly-url";
+    const calendlyUrl = "https://calendly.com/onyedikasgn/mantis-demo";
     const prefillParams = new URLSearchParams({
       email: formData.email,
       name: `${formData.firstName} ${formData.lastName}`,
@@ -247,8 +247,9 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
             <div className="flex flex-col md:flex-row justify-between gap-4 md:items-center">
               <P2 content="See Mantis in action." color="text-gray-600" />
               <div className="w-auto">
-                <PrimaryBtn
+                <SecondaryBtn
                   title="Schedule a demo"
+                  className="border-green text-green"
                   onClick={handleScheduleDemo}
                 />
               </div>

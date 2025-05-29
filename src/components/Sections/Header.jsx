@@ -1,21 +1,37 @@
-import { PrimaryBtn, SecondaryBtn } from "../Elements/Buttons"
-import { H1, P1, P4 } from "../Elements/Texts"
+import { PrimaryBtn, SecondaryBtn } from "../Elements/Buttons";
+import { H1, P1 } from "../Elements/Texts";
+import dash from "../../assets/dash.svg";
 
 const Header = () => {
   return (
-    <section className="flex items-center justify-center bg-green py-24 px-8 mb-16 md:mb-40">
-      <div className="flex flex-col items-center justify-center gap-9 md:gap-12 w-full md:w-[48rem]">
-        <div className="flex items-center gap-7 md:gap-9 flex-col self-stretch">
-            <H1 />
-            <P1 content="Mantis enables accountants, finance professionals and small-business owners to quickly and accurately reconcile bank statements and internal accounts." color="text-gwhite"/>
+    <section className="relative bg-green px-6 py-24 md:py-32 text-center z-10 overflow-visible">
+      {/* Content */}
+      <div className="flex flex-col items-center gap-9 md:gap-12 w-full max-w-3xl mx-auto z-20 relative">
+        <div className="flex flex-col gap-7 md:gap-9">
+          <H1 />
+          <P1
+            content="Mantis is an AI-powered platform that unifies data from banks, ERPs, payment gateways, and POS to automate reconciliation, treasury, and full back-office finance."
+            color="text-gwhite"
+          />
         </div>
-        <div className="flex flex-col md:flex-row w-max items-center gap-3.5 md:gap-7">
-            <PrimaryBtn title="Start reconciling"/>
-            <SecondaryBtn title="Share feedback with us" bColor="white" tColor="gwhite"/>
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-7">
+          <PrimaryBtn title="Get early access" />
+        </div>
+      </div>
+
+      {/* Image spilling out of green section */}
+      <div className="relative w-full max-w-6xl mx-auto -mb-64 mt-16 md:mt-32 px-4 z-30">
+        <div className="relative">
+          <img
+            src={dash}
+            alt="Mantis Dashboard"
+            className="w-full h-auto rounded-md md:rounded-2xl shadow-2xl border border-bgrey/10 relative z-30"
+          />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent to-black/5 pointer-events-none" />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

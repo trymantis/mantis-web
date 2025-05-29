@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="flex flex-col gap-9 pb-10 md:pb-16">
         <H3 content="Try Mantis" color="gwhite" align="left"/>
         <div className="flex flex-col lg:flex-row gap-3.5 lg:gap-6 items-start">
-            <PrimaryBtn title="Start Reconciling" />
-            <SecondaryBtn title="Share feedback with us" bColor="white" tColor="gwhite"/>
+            <PrimaryBtn title="Get early access" />
+            <SecondaryBtn title="Connect with the team" bColor="white" tColor="gwhite"/>
         </div>
       </div>
       <div className="pt-10 md:pt-16 border-t border-gwhite space-y-6 lg:space-y-12 opacity-60">

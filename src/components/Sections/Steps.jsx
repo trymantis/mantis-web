@@ -3,12 +3,12 @@ import StepCard from "../Cards/StepCard"
 
 const Steps = () => {
   return (
-    <section className="mx-8 md:mx-7.4 mb-16 md:mb-40">
-      <H2 content="Start faster, and more accurate reconciliation."/>
+    <section id="how-it-works" className="mx-8 md:mx-7.4 mb-16 md:mb-40 mt-32 md:mt-52">
+      <H2 content="How it works."/>
       <div>
-        <StepCard numberContent="01" h4Content="Upload your bank statement" p2Content="Download your bank statement in PDF format for the period (date range) you want to perform reconciliation from your bank’s app. Launch the Mantis application and upload the downloaded bank statement." />
-        <StepCard numberContent="02" h4Content="Upload your internal records" p2Content="Create a CSV file of your internal transaction records of which you want to reconcile with your bank statement for the period (date range) you want to perform reconciliation. Upload the CSV file on Mantis to continue." />
-        <StepCard numberContent="03" h4Content="Reconcile" p2Content="Once both your bank statement and internal records are uploaded without any errors, all that is left is to hit the reconcile button and let Mantis do it’s magic." />
+        <StepCard numberContent="01" h4Content="Connect Everything" p2Content="Instantly link your banks, ERPs, and payment tools to unify financial data across all your systems in one secure platform." />
+        <StepCard numberContent="02" h4Content="Automate Workflows" p2Content="Use AI to clean, match, and resolve transactions—eliminating manual reconciliation and exception handling across teams and tools." />
+        <StepCard numberContent="03" h4Content="Act Instantly" p2Content="Get real-time visibility into cash flow, reconciliations, and financial health—enabling faster decisions, better controls, and smarter forecasting." />
       </div>
     </section>
   )

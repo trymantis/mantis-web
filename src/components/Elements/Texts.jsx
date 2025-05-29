@@ -1,14 +1,14 @@
 const H1 = ({content}) => {
     return (
-        <h1 className="font-bag text-center tracking-tight text-5xl md:text-8xl text-gwhite leading-tight md:leading-tight">
-            Reconcile your books <span className="text-lemon">3x</span> faster
+        <h1 className="font-bag text-center tracking-tight text-5xl md:text-7xl text-gwhite leading-tight md:leading-tight">
+            Automating Finance for the Instant Economy
         </h1>
   )
 }
 
 const H2 = ({content}) => {
     return (
-        <h1 className="font-bag tracking-tight text-3xl md:text-6xl lg:text-7xl text-black leading-tight md:leading-tight w-full lg:w-[44rem]">
+        <h1 className="font-bag tracking-tight text-3xl md:text-5xl lg:text-6xl text-black leading-tight md:leading-tight w-full lg:w-[44rem]">
             {content}
         </h1>
     )
@@ -82,3 +82,5 @@ export {
     P3,
     P4
 }
+
+// <span className="text-lemon">3x</span> faster

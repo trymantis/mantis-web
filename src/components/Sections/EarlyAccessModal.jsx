@@ -32,16 +32,28 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
     return emailRegex.test(email);
   };
 
+  const roles = [
+    "CEO / Founder",
+    "CFO (Chief Financial Officer)",
+    "Head of Finance / Finance Controller",
+    "Head of Reconciliation",
+    "Settlement Operations Manager",
+    "Treasury Manager",
+    "Head of Internal Audit / Risk",
+  ];
+
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!formData.firstName.trim())
+      newErrors.firstName = "First name is required";
     if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (!formData.organization.trim()) newErrors.organization = "Organization is required";
+    if (!formData.organization.trim())
+      newErrors.organization = "Organization is required";
     if (!formData.role) newErrors.role = "Role is required";
 
     setErrors(newErrors);
@@ -55,7 +67,7 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
     setIsLoading(true);
     try {
       const formDataToSend = new FormData();
-      Object.keys(formData).forEach(key => {
+      Object.keys(formData).forEach((key) => {
         formDataToSend.append(key, formData[key]);
       });
 
@@ -154,7 +166,9 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
                     onChange={handleChange}
                     placeholder="e.g. John"
                     required
-                    className={`w-full ${errors.firstName ? "border-red-500" : ""}`}
+                    className={`w-full ${
+                      errors.firstName ? "border-red-500" : ""
+                    }`}
                   />
                   {errors.firstName && (
                     <p className="text-red-500 text-xs">{errors.firstName}</p>
@@ -169,7 +183,9 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
                     onChange={handleChange}
                     placeholder="e.g. Doe"
                     required
-                    className={`w-full ${errors.lastName ? "border-red-500" : ""}`}
+                    className={`w-full ${
+                      errors.lastName ? "border-red-500" : ""
+                    }`}
                   />
                   {errors.lastName && (
                     <p className="text-red-500 text-xs">{errors.lastName}</p>
@@ -201,7 +217,9 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
                   value={formData.organization}
                   onChange={handleChange}
                   required
-                  className={`w-full ${errors.organization ? "border-red-500" : ""}`}
+                  className={`w-full ${
+                    errors.organization ? "border-red-500" : ""
+                  }`}
                 />
                 {errors.organization && (
                   <p className="text-red-500 text-xs">{errors.organization}</p>
@@ -216,15 +234,17 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
                     setFormData((prev) => ({ ...prev, role: value }))
                   }
                 >
-                  <SelectTrigger className={`${errors.role ? "border-red-500" : ""}`}>
+                  <SelectTrigger
+                    className={`${errors.role ? "border-red-500" : ""}`}
+                  >
                     <SelectValue placeholder="What's your role on the team?" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="ceo">CEO</SelectItem>
-                    <SelectItem value="cto">CTO</SelectItem>
-                    <SelectItem value="cfo">CFO</SelectItem>
-                    <SelectItem value="manager">Manager</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                    {roles.map((role) => (
+                      <SelectItem key={role} value={role}>
+                        {role}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 {errors.role && (
@@ -232,7 +252,7 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
                 )}
               </div>
               <div className="flex justify-start md:justify-end">
-                <PrimaryBtn 
+                <PrimaryBtn
                   title={isLoading ? "Submitting..." : "Join waitlist"}
                   type="submit"
                   disabled={!isFormValid() || isLoading}

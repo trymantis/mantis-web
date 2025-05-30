@@ -9,9 +9,9 @@ const Security = () => {
             <P1 content="Mantis enables accountants, finance professionals and small-business owners" color="black"/>
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-center self-stretch gap-6 lg:gap-7 xl:gap-6">
-            <SecurityCard h6Content="End-to-End Encryption" p2Content="All data is encrypted in transit and at rest, with optional customer-managed keys for maximum confidentiality."/>
-            <SecurityCard h6Content="Access & Identity Control" p2Content="Role-based permissions, single sign-on, and multi-factor authentication ensure only the right people see your data."/>
-            <SecurityCard h6Content="You Own Your Financial Data" p2Content="Choose Mantis-managed cloud or self-host it yourself—always encrypted, always under your control."/>
+            <SecurityCard h6Content="End-to-End Encryption" p2Content="All data is encrypted in transit and at rest, with optional customer-managed keys for maximum confidentiality." image="/image7.svg"/>
+            <SecurityCard h6Content="Access & Identity Control" p2Content="Role-based permissions, single sign-on, and multi-factor authentication ensure only the right people see your data." image="/image8.svg"/>
+            <SecurityCard h6Content="You Own Your Financial Data" p2Content="Choose Mantis-managed cloud or self-host it yourself—always encrypted, always under your control." image="/image9.svg"/>
         </div>
     </section>
   )

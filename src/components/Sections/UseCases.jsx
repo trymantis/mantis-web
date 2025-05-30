@@ -33,12 +33,12 @@ const UseCases = () => {
         <H2 content="Built for High-Volume Businesses."/>
       </div>
       <div ref={scrollContainerRef} className="flex gap-9 overflow-auto hide-scrollbar mt-16 md:mt-40 px-7.4">
-        <UseCaseCard h6Content="Fintechs & Payment Processors" p2Content="We automate settlement and fee reconciliation across gateways, billers and bank partners for instant, error-free payouts."/>
-        <UseCaseCard h6Content="Asset & Wealth Managers" p2Content="We track fund inflows, redemptions, and fee calculations across custodians and portfolios to ensure precise NAV reporting."/>
-        <UseCaseCard h6Content="Marketplaces & e-Commerce" p2Content="We match customer payments to vendor payouts automatically, eliminating reconciliation bottlenecks."/>
-        <UseCaseCard h6Content="Insurance Carriers" p2Content="We automate premium collections and claims payouts reconciliation, providing clear audit trails and compliance."/>
-        <UseCaseCard h6Content="Telecoms & Utilities" p2Content="We consolidate airtime, billing, and partner payouts into one system, so you catch revenue leaks before they happen."/>
-        <UseCaseCard h6Content="Retail & FMCG Chains" p2Content="We sync POS and bank data to your ledger, catching discrepancies and speeding up store-to-head-office closes."/>
+        <UseCaseCard h6Content="Fintechs & Payment Processors" p2Content="We automate settlement and fee reconciliation across gateways, billers and bank partners for instant, error-free payouts." image="/image3.svg"/>
+        <UseCaseCard h6Content="Asset & Wealth Managers" p2Content="We track fund inflows, redemptions, and fee calculations across custodians and portfolios to ensure precise NAV reporting." image="/image1.svg"/>
+        <UseCaseCard h6Content="Marketplaces & e-Commerce" p2Content="We match customer payments to vendor payouts automatically, eliminating reconciliation bottlenecks." image="/image2.svg"/>
+        <UseCaseCard h6Content="Insurance Carriers" p2Content="We automate premium collections and claims payouts reconciliation, providing clear audit trails and compliance." image="/image5.svg"/>
+        <UseCaseCard h6Content="Telecoms & Utilities" p2Content="We consolidate airtime, billing, and partner payouts into one system, so you catch revenue leaks before they happen." image="/image4.svg"/>
+        <UseCaseCard h6Content="Retail & FMCG Chains" p2Content="We sync POS and bank data to your ledger, catching discrepancies and speeding up store-to-head-office closes." image="/image6.svg"/>
       </div>
       <div className="flex justify-center md:justify-between mt-16 md:mt-40 mx-7.4">
         <PrimaryBtn title="Get early access" onClick={() => setIsModalOpen(true)}/>
@@ -63,7 +63,7 @@ const UseCases = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
-      
+
     </section>
   )
 }

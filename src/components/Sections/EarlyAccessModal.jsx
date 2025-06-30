@@ -253,7 +253,7 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
               </div>
               <div className="flex justify-start md:justify-end">
                 <PrimaryBtn
-                  title={isLoading ? "Submitting..." : "Join waitlist"}
+                  title={isLoading ? "Submitting..." : "Join Early Access (2 Months Free)"}
                   type="submit"
                   disabled={!isFormValid() || isLoading}
                 />

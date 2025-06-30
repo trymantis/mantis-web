@@ -14,13 +14,13 @@ const Header = () => {
         <div className="flex flex-col gap-12 md:gap-12">
           <H1 />
           <P1
-            content="Mantis is an AI-powered platform that unifies data from banks, ERPs, payment gateways, and POS to automate reconciliation, treasury, and full back-office finance."
+            content="Automate reconciliation, run scheduled or on‑demand models, and run your finance operation on autopilot, powered by secure, AI-driven workflows."
             color="text-gwhite"
           />
         </div>
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-7">
           <PrimaryBtn 
-            title="Get early access" 
+            title="Join Early Access (2 Months Free)" 
             onClick={() => setIsModalOpen(true)}
           />
         </div>

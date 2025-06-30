@@ -1,7 +1,7 @@
 const H1 = ({content}) => {
     return (
         <h1 className="font-bag text-center tracking-tight text-5xl md:text-7xl text-gwhite leading-tight md:leading-tight">
-            Automating Finance for the Instant Economy
+            Autopilot for your finance team
         </h1>
   )
 }

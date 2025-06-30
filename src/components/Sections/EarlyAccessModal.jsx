@@ -108,7 +108,7 @@ const EarlyAccessModal = ({ isOpen, onClose }) => {
   };
 
   const handleScheduleDemo = () => {
-    const calendlyUrl = "https://calendly.com/onyedikasgn/mantis-demo";
+    const calendlyUrl = "https://calendar.app.google/BeF6mfyFkoKZyzfD6";
     const prefillParams = new URLSearchParams({
       email: formData.email,
       name: `${formData.firstName} ${formData.lastName}`,

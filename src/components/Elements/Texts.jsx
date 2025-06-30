@@ -8,9 +8,9 @@ const H1 = ({content}) => {
 
 const H2 = ({content}) => {
     return (
-        <h1 className="font-bag tracking-tight text-3xl md:text-5xl lg:text-6xl text-black leading-tight md:leading-tight w-full lg:w-[44rem]">
+        <h2 className="font-bag tracking-tight text-3xl md:text-5xl lg:text-6xl text-black leading-tight md:leading-tight w-full lg:w-[44rem]">
             {content}
-        </h1>
+        </h2>
     )
 }
 
